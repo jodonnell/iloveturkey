@@ -1,0 +1,37 @@
+<html>
+<head>
+<script type="text/javascript" src="wz_jsgraphics.js"></script>
+<title>Title</title>
+</head>
+
+<body>
+
+<center><img src="map.jpg"></center>
+
+<script type="text/javascript">
+<!--
+function myDrawFunction()
+{
+  jg_doc.setColor("#00ff00"); // green
+  jg_doc.fillRect(355, 11, 315, 63); // co-ordinates related to the document
+  jg_doc.fillRect(355, 413, 315, 63)
+  jg_doc.paint(); // draws, in this case, directly into the document
+}
+var jg_doc = new jsGraphics(); // draw directly into document
+
+myDrawFunction();
+//-->
+</script>
+
+
+
+<p>These bottom squares will be the colors you can pick from.
+i was thinking of having two rows, a top row would change the 4 inner
+triangles, and the bottom row would change the 2 middle rectangles.
+the square in the middle and the two larger rectangles to the sides
+would be beveled(pre-cut to look pretty) glass, but could later be
+modified to be other things if the customer wanted.
+</p></center>
+
+</body>
+</html>

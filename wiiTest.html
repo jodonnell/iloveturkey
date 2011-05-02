@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+</HEAD>
+<BODY>
+    left: <input type="text" id="left" value=""><br>
+     right: <input type="text" id="right" value=""><br>
+     up: <input type="text" id="up" value=""><br>
+     down: <input type="text" id="down" value=""><br>
+     plus: <input type="text" id="plus" value=""><br>
+     two: <input type="text" id="two" value=""><br>
+     one: <input type="text" id="one" value=""><br>
+     b: <input type="text" id="b" value=""><br>
+     a: <input type="text" id="a" value=""><br>
+     minus: <input type="text" id="minus" value=""><br>
+     z: <input type="text" id="z" value=""><br>
+     c: <input type="text" id="c" value=""><br>
+     dpdScreenX: <input type="text" id="dpdScreenX" value=""><br>
+     dpdScreenY: <input type="text" id="dpdScreenY" value=""><br>
+     dpdX: <input type="text" id="dpdX" value=""><br>
+     dpdY: <input type="text" id="dpdY" value=""><br>
+     dpdRollX: <input type="text" id="dpdRollX" value=""><br>
+     dpdRollY: <input type="text" id="dpdRollY" value=""><br>
+     error: <input type="text" id="error" value=""><br>
+<script>
+var remote;
+function update()
+{
+    if ( window.opera && opera.wiiremote )
+        {
+            remote = opera.wiiremote.update(0);
+            if ( remote.isEnabled )
+                {
+                    document.getElementById('left').value =  remote.hold & 1;
+                    document.getElementById('right').value =  remote.hold & 2;
+                    document.getElementById('up').value =  remote.hold & 4;
+                    document.getElementById('down').value =  remote.hold & 8;
+                    document.getElementById('plus').value =  remote.hold & 16;
+                    document.getElementById('two').value =  remote.hold & 256;
+                    document.getElementById('one').value =  remote.hold & 512;
+                    document.getElementById('b').value =  remote.hold & 1024;
+                    document.getElementById('a').value =  remote.hold & 2048;
+                    document.getElementById('minus').value =  remote.hold & 4096;
+                    document.getElementById('z').value =  remote.hold & 8192;
+                    document.getElementById('c').value =  remote.hold & 16384;
+                    document.getElementById('dpdScreenX').value = remote.dpdScreenX;
+                    document.getElementById('dpdScreenY').value = remote.dpdScreenY;
+                    document.getElementById('dpdX').value = remote.dpdX;
+                    document.getElementById('dpdY').value = remote.dpdY;
+                    document.getElementById('dpdRollX').value = remote.dpdRollX;
+                    document.getElementById('dpdRollY').value = remote.dpdRollY;
+                    document.getElementById('error').value = '';
+                }
+            else {
+                document.getElementById('error').value = 'error!!';
+            }
+        }
+    else{ 
+        document.getElementById('error').value = 'error';
+    }
+}
+
+window.setInterval("update();", 1000);
+</script>
+</BODY>
+</HTML>

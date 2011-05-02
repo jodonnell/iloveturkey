@@ -1,0 +1,18 @@
+<HTML>
+
+<script>
+
+function popup_redirect(link){
+ 
+	setTimeout("window.location.href='"+link+"'", 3000);
+	
+        popupwindow = window.open("popup.html","popup","height=200, width=300, 				   scrollbars=no, status=no, toolbar=no, location=no");
+
+}
+</script>
+<BODY>
+
+<a href="#" onClick="popup_redirect('me.html');">Click me baby</a>
+
+</BODY>
+</HTML>
